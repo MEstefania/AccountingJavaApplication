@@ -1,8 +1,8 @@
-CREATE SCHEMA if not exists sofka;
-ALTER SCHEMA sofka OWNER TO "sofka_owner";
+CREATE SCHEMA if not exists cliente;
+ALTER SCHEMA cliente OWNER TO "cliente_owner";
 
 --Persona
-CREATE table IF NOT EXISTS sofka.persona
+CREATE table IF NOT EXISTS cliente.persona
 (
     id_per                  BIGSERIAL primary key,
     nombre_per              text NOT NULL,
@@ -13,61 +13,29 @@ CREATE table IF NOT EXISTS sofka.persona
     telefono_per            varchar(10) NOT NULL
 );
 
-ALTER TABLE sofka.persona
-    OWNER to "sofka_owner";
+ALTER TABLE cliente.persona
+    OWNER to "cliente_owner";
 
 --Cliente
-CREATE table IF NOT EXISTS sofka.cliente
+CREATE table IF NOT EXISTS cliente.cliente
 (
     id_cli              BIGSERIAL primary key,
     contrasenia_cli     text NOT NULL,
     estado_cli          boolean NOT NULL,
     id_per              bigint
                         constraint fk_cliente_persona_id
-                        references sofka.persona(id_per)
+                        references cliente.persona(id_per)
 );
 
-ALTER TABLE sofka.cliente
-    OWNER to "sofka_owner";
-
---Cuenta
-CREATE table IF NOT EXISTS sofka.cuenta
-(
-    id_cue              BIGSERIAL primary key,
-    numero_cue          text NOT NULL,
-    tipo_cue            varchar(15) NOT NULL,
-    saldo_inicial_cue   numeric(19, 2) NOT NULL,
-    estado_cue          boolean NOT NULL,
-    id_cli              bigint
-                    constraint fk_cuenta_cliente_id
-                    references sofka.cliente(id_cli)
-);
-
-ALTER TABLE sofka.cuenta
-    OWNER to "sofka_owner";
-
---Movimiento
-CREATE table IF NOT EXISTS sofka.movimiento
-(
-    id_mov          BIGSERIAL primary key,
-    fecha_mov       timestamp NOT NULL,
-    tipo_mov        varchar(15) NOT NULL,
-    valor_mov       numeric(19, 2) NOT NULL,
-    saldo_mov       numeric(19, 2) NOT NULL,
-    id_cue          bigint
-                    constraint fk_movimiento_cuenta_id
-                    references sofka.cuenta(id_cue)
-);
-
-ALTER TABLE sofka.movimiento
-    OWNER to "sofka_owner";
+ALTER TABLE cliente.cliente
+    OWNER to "cliente_owner";
 
 -----GRANTS
 GRANT
 USAGE
 ON
 SCHEMA
-sofka TO "sofka_user";
+cliente TO "cliente_user";
 
 GRANT
 SELECT,
@@ -75,15 +43,15 @@ INSERT
 ,
 UPDATE,
 DELETE
-ON ALL TABLES IN SCHEMA sofka
-    TO "sofka_user";
+ON ALL TABLES IN SCHEMA cliente
+    TO "cliente_user";
 
 GRANT
 SELECT,
 UPDATE
     ON ALL
-    SEQUENCES IN SCHEMA sofka
-    TO "sofka_user";
+    SEQUENCES IN SCHEMA cliente
+    TO "cliente_user";
 
 GRANT
 SELECT,
@@ -91,4 +59,4 @@ INSERT,
 UPDATE,
 DELETE
 ON ALL TABLES IN SCHEMA public
-    TO "sofka_user";
+    TO "cliente_user";

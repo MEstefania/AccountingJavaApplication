@@ -1,7 +1,7 @@
-package org.sofkajavajunior.exception;
+package org.sofkajavajuniorclients.exception;
 
-import org.sofkajavajunior.dto.respuestaBase.BaseResponseDTO;
-import org.sofkajavajunior.dto.respuestaBase.ResponseBaseMapper;
+import org.sofkajavajuniorclients.dto.respuestaBase.BaseResponseDTO;
+import org.sofkajavajuniorclients.dto.respuestaBase.ResponseBaseMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

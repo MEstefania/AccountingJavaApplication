@@ -1,4 +1,4 @@
-package org.sofkajavajunior.model;
+package org.sofkajavajuniorclients.model;
 
 import javax.persistence.*;
 

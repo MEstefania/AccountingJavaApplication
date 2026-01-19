@@ -1,4 +1,4 @@
-package org.sofkajavajunior.dto.respuestaBase;
+package org.sofkajavajuniorclients.dto.respuestaBase;
 
 import java.util.Arrays;
 import java.util.HashMap;

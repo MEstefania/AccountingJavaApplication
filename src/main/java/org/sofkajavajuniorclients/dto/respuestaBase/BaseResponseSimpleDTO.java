@@ -1,4 +1,4 @@
-package org.sofkajavajunior.dto.respuestaBase;
+package org.sofkajavajuniorclients.dto.respuestaBase;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,6 +1,6 @@
-package org.sofkajavajunior.repository;
+package org.sofkajavajuniorclients.repository;
 
-import org.sofkajavajunior.model.Persona;
+import org.sofkajavajuniorclients.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

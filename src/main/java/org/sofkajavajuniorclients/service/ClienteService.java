@@ -1,8 +1,8 @@
-package org.sofkajavajunior.service;
+package org.sofkajavajuniorclients.service;
 
-import org.sofkajavajunior.dto.ClienteDTO;
-import org.sofkajavajunior.dto.respuestaBase.BaseResponseDTO;
-import org.sofkajavajunior.dto.respuestaBase.BaseResponseSimpleDTO;
+import org.sofkajavajuniorclients.dto.ClienteDTO;
+import org.sofkajavajuniorclients.dto.respuestaBase.BaseResponseDTO;
+import org.sofkajavajuniorclients.dto.respuestaBase.BaseResponseSimpleDTO;
 
 public interface ClienteService {
     BaseResponseDTO crearCliente(ClienteDTO cliente);

@@ -1,4 +1,4 @@
-package org.sofkajavajunior.exception;
+package org.sofkajavajuniorclients.exception;
 
 public class ClienteException extends RuntimeException{
     public static final String NO_EXISTE_CLIENTE=
