@@ -1,13 +1,13 @@
-package org.sofkajavajuniorclients.service.impl;
+package org.sofkajavaclients.service.impl;
 
-import org.sofkajavajuniorclients.dto.ClienteDTO;
-import org.sofkajavajuniorclients.dto.respuestaBase.BaseResponseDTO;
-import org.sofkajavajuniorclients.dto.respuestaBase.BaseResponseSimpleDTO;
-import org.sofkajavajuniorclients.dto.respuestaBase.ResponseBaseMapper;
-import org.sofkajavajuniorclients.exception.ClienteException;
-import org.sofkajavajuniorclients.model.Cliente;
-import org.sofkajavajuniorclients.repository.ClienteRepository;
-import org.sofkajavajuniorclients.service.ClienteService;
+import org.sofkajavaclients.dto.ClienteDTO;
+import org.sofkajavaclients.dto.respuestaBase.BaseResponseDTO;
+import org.sofkajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
+import org.sofkajavaclients.dto.respuestaBase.ResponseBaseMapper;
+import org.sofkajavaclients.exception.ClienteException;
+import org.sofkajavaclients.model.Cliente;
+import org.sofkajavaclients.repository.ClienteRepository;
+import org.sofkajavaclients.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;

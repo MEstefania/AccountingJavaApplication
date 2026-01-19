@@ -1,5 +1,5 @@
 CREATE SCHEMA if not exists cliente;
-ALTER SCHEMA cliente OWNER TO "cliente_owner";
+ALTER SCHEMA cliente OWNER TO "sofka_owner";
 
 --Persona
 CREATE table IF NOT EXISTS cliente.persona
@@ -14,7 +14,7 @@ CREATE table IF NOT EXISTS cliente.persona
 );
 
 ALTER TABLE cliente.persona
-    OWNER to "cliente_owner";
+    OWNER to "sofka_owner";
 
 --Cliente
 CREATE table IF NOT EXISTS cliente.cliente
@@ -28,14 +28,14 @@ CREATE table IF NOT EXISTS cliente.cliente
 );
 
 ALTER TABLE cliente.cliente
-    OWNER to "cliente_owner";
+    OWNER to "sofka_owner";
 
 -----GRANTS
 GRANT
 USAGE
 ON
 SCHEMA
-cliente TO "cliente_user";
+cliente TO "sofka_user";
 
 GRANT
 SELECT,
@@ -44,14 +44,14 @@ INSERT
 UPDATE,
 DELETE
 ON ALL TABLES IN SCHEMA cliente
-    TO "cliente_user";
+    TO "sofka_user";
 
 GRANT
 SELECT,
 UPDATE
     ON ALL
     SEQUENCES IN SCHEMA cliente
-    TO "cliente_user";
+    TO "sofka_user";
 
 GRANT
 SELECT,
@@ -59,4 +59,4 @@ INSERT,
 UPDATE,
 DELETE
 ON ALL TABLES IN SCHEMA public
-    TO "cliente_user";
+    TO "sofka_user";

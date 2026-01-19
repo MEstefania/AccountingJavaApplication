@@ -1,11 +1,11 @@
-package org.sofkajavajuniorclients.model;
+package org.sofkajavaclients.model;
 
 import javax.persistence.*;
 
 @Entity
 @Table(
         name = "cliente",
-        schema = "sofka")
+        schema = "cliente")
 public class Cliente extends Persona{
     //@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

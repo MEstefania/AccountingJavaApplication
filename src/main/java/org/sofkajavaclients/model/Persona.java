@@ -1,11 +1,11 @@
-package org.sofkajavajuniorclients.model;
+package org.sofkajavaclients.model;
 
 import javax.persistence.*;
 
 @Entity
 @Table(
         name = "persona",
-        schema = "sofka")
+        schema = "cliente")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Persona {
     @Id
