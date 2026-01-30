@@ -1,8 +1,8 @@
-package org.sofkajavaclients.service;
+package org.tatajavaclients.service;
 
-import org.sofkajavaclients.dto.ClienteDTO;
-import org.sofkajavaclients.dto.respuestaBase.BaseResponseDTO;
-import org.sofkajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
+import org.tatajavaclients.dto.ClienteDTO;
+import org.tatajavaclients.dto.respuestaBase.BaseResponseDTO;
+import org.tatajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
 
 public interface ClienteService {
     BaseResponseDTO crearCliente(ClienteDTO cliente);

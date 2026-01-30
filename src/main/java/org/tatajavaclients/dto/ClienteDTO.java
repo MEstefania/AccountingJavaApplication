@@ -1,4 +1,4 @@
-package org.sofkajavaclients.dto;
+package org.tatajavaclients.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

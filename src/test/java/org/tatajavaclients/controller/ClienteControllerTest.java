@@ -1,10 +1,10 @@
-package org.sofkajavaclients.controller;
+package org.tatajavaclients.controller;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
-import org.sofkajavaclients.dto.respuestaBase.BaseResponseDTO;
-import org.sofkajavaclients.dto.respuestaBase.ResponseBaseMapper;
-import org.sofkajavaclients.service.impl.ClienteServiceImpl;
+import org.tatajavaclients.dto.respuestaBase.BaseResponseDTO;
+import org.tatajavaclients.dto.respuestaBase.ResponseBaseMapper;
+import org.tatajavaclients.service.impl.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

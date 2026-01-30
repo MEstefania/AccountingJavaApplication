@@ -1,4 +1,4 @@
-package org.sofkajavaclients.dto.respuestaBase;
+package org.tatajavaclients.dto.respuestaBase;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

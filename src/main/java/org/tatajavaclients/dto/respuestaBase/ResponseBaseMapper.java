@@ -1,4 +1,4 @@
-package org.sofkajavaclients.dto.respuestaBase;
+package org.tatajavaclients.dto.respuestaBase;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,8 +1,8 @@
-CREATE SCHEMA if not exists cliente;
-ALTER SCHEMA cliente OWNER TO "sofka_owner";
+CREATE SCHEMA if not exists accounting;
+ALTER SCHEMA accounting OWNER TO "tata_owner";
 
 --Persona
-CREATE table IF NOT EXISTS cliente.persona
+CREATE table IF NOT EXISTS accounting.persona
 (
     id_per                  BIGSERIAL primary key,
     nombre_per              text NOT NULL,
@@ -13,29 +13,29 @@ CREATE table IF NOT EXISTS cliente.persona
     telefono_per            varchar(10) NOT NULL
 );
 
-ALTER TABLE cliente.persona
-    OWNER to "sofka_owner";
+ALTER TABLE accounting.persona
+    OWNER to "tata_owner";
 
 --Cliente
-CREATE table IF NOT EXISTS cliente.cliente
+CREATE table IF NOT EXISTS accounting.cliente
 (
     id_cli              BIGSERIAL primary key,
     contrasenia_cli     text NOT NULL,
     estado_cli          boolean NOT NULL,
     id_per              bigint
-                        constraint fk_cliente_persona_id
-                        references cliente.persona(id_per)
+                        constraint fk_accounting_persona_id
+                        references accounting.persona(id_per)
 );
 
-ALTER TABLE cliente.cliente
-    OWNER to "sofka_owner";
+ALTER TABLE accounting.cliente
+    OWNER to "tata_owner";
 
 -----GRANTS
 GRANT
 USAGE
 ON
 SCHEMA
-cliente TO "sofka_user";
+accounting TO "tata_user";
 
 GRANT
 SELECT,
@@ -43,15 +43,15 @@ INSERT
 ,
 UPDATE,
 DELETE
-ON ALL TABLES IN SCHEMA cliente
-    TO "sofka_user";
+ON ALL TABLES IN SCHEMA accounting
+    TO "tata_user";
 
 GRANT
 SELECT,
 UPDATE
     ON ALL
-    SEQUENCES IN SCHEMA cliente
-    TO "sofka_user";
+    SEQUENCES IN SCHEMA accounting
+    TO "tata_user";
 
 GRANT
 SELECT,
@@ -59,4 +59,4 @@ INSERT,
 UPDATE,
 DELETE
 ON ALL TABLES IN SCHEMA public
-    TO "sofka_user";
+    TO "tata_user";

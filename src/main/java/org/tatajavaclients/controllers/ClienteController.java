@@ -1,10 +1,10 @@
-package org.sofkajavaclients.controllers;
+package org.tatajavaclients.controllers;
 
 
-import org.sofkajavaclients.dto.ClienteDTO;
-import org.sofkajavaclients.dto.respuestaBase.BaseResponseDTO;
-import org.sofkajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
-import org.sofkajavaclients.service.ClienteService;
+import org.tatajavaclients.dto.ClienteDTO;
+import org.tatajavaclients.dto.respuestaBase.BaseResponseDTO;
+import org.tatajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
+import org.tatajavaclients.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

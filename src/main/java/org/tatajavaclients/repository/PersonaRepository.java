@@ -1,6 +1,6 @@
-package org.sofkajavaclients.repository;
+package org.tatajavaclients.repository;
 
-import org.sofkajavaclients.model.Persona;
+import org.tatajavaclients.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
