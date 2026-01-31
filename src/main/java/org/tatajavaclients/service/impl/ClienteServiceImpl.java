@@ -1,5 +1,6 @@
 package org.tatajavaclients.service.impl;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.tatajavaclients.dto.ClienteRequestDTO;
 import org.tatajavaclients.dto.ClienteResponseDTO;
 import org.tatajavaclients.dto.respuestaBase.BaseResponseDTO;
@@ -80,7 +81,7 @@ public class ClienteServiceImpl implements ClienteService {
         nuevoCliente.setIdentificacion(cliente.getIdentificacion());
         nuevoCliente.setEstado(cliente.getEstado());
         nuevoCliente.setEdad(cliente.getEdad());
-        nuevoCliente.setContrasenia(cliente.getContrasenia());
+        nuevoCliente.setContrasenia(new BCryptPasswordEncoder().encode(cliente.getContrasenia()));
         nuevoCliente.setDireccion(cliente.getDireccion());
         nuevoCliente.setGenero(cliente.getGenero());
         nuevoCliente.setTelefono(cliente.getTelefono());
