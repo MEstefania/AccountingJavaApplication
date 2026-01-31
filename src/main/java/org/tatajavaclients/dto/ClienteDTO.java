@@ -1,7 +1,8 @@
 package org.tatajavaclients.dto;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class ClienteDTO {
 
@@ -35,6 +36,7 @@ public class ClienteDTO {
 
     @NotNull(message = "La contraseña no puede ser nulo.")
     @JsonProperty("contrasenia")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String contrasenia;
 
     @NotNull(message = "El estado no puede ser nulo.")

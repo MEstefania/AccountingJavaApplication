@@ -1,13 +1,13 @@
 package org.tatajavaclients.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(
         name = "cliente",
         schema = "accounting")
 public class Cliente extends Persona{
-    //@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cli", nullable = false)
     private Long id;
