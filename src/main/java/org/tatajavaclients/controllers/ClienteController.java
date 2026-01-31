@@ -1,7 +1,7 @@
 package org.tatajavaclients.controllers;
 
 
-import org.tatajavaclients.dto.ClienteDTO;
+import org.tatajavaclients.dto.ClienteRequestDTO;
 import org.tatajavaclients.dto.respuestaBase.BaseResponseDTO;
 import org.tatajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
 import org.tatajavaclients.service.ClienteService;
@@ -19,7 +19,7 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<BaseResponseDTO> crearCliente(
-            @Valid @RequestBody ClienteDTO  nuevo_cliente
+            @Valid @RequestBody ClienteRequestDTO nuevo_cliente
     ) {
         return new ResponseEntity<>(clienteService.crearCliente(nuevo_cliente), HttpStatus.OK);
     }
@@ -37,7 +37,7 @@ public class ClienteController {
     @PutMapping("/{cliente_id}")
     public ResponseEntity<BaseResponseDTO> actualizarCliente(
             @Valid @PathVariable("cliente_id") Long clienteId,
-            @Valid @RequestBody ClienteDTO  nuevo_cliente
+            @Valid @RequestBody ClienteRequestDTO nuevo_cliente
     ) {
         return new ResponseEntity<>(clienteService.actualizarCliente(nuevo_cliente, clienteId), HttpStatus.OK);
     }

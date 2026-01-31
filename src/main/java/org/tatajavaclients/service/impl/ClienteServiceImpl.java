@@ -1,6 +1,7 @@
 package org.tatajavaclients.service.impl;
 
-import org.tatajavaclients.dto.ClienteDTO;
+import org.tatajavaclients.dto.ClienteRequestDTO;
+import org.tatajavaclients.dto.ClienteResponseDTO;
 import org.tatajavaclients.dto.respuestaBase.BaseResponseDTO;
 import org.tatajavaclients.dto.respuestaBase.BaseResponseSimpleDTO;
 import org.tatajavaclients.dto.respuestaBase.ResponseBaseMapper;
@@ -21,7 +22,7 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteRepository clienteRepository;
 
     @Override
-    public BaseResponseDTO crearCliente(ClienteDTO cliente) {
+    public BaseResponseDTO crearCliente(ClienteRequestDTO cliente) {
         try {
             Cliente clienteExiste = clienteRepository.findByIdentificacion(cliente.getIdentificacion()).orElse(null);
             if (clienteExiste != null) {
@@ -37,19 +38,19 @@ public class ClienteServiceImpl implements ClienteService {
     public BaseResponseSimpleDTO obtenerCliente(Long idCliente) {
             return ResponseBaseMapper.generateOkSimpleResponse(modelMapper.map(clienteRepository.findById(idCliente)
                             .orElseThrow(() -> new EntityNotFoundException("No se encontró el cliente con id: " + idCliente)),
-                    ClienteDTO.class));
+                    ClienteResponseDTO.class));
     }
 
     @Override
     public BaseResponseDTO obtenerTodosLosClientes() {
         return ResponseBaseMapper.generateOkResponse(clienteRepository.findAll().
                 stream().
-                map(cliente -> modelMapper.map(cliente, ClienteDTO.class))
+                map(cliente -> modelMapper.map(cliente, ClienteResponseDTO.class))
                 .collect(Collectors.toList()));
     }
 
     @Override
-    public BaseResponseDTO actualizarCliente(ClienteDTO cliente, Long idCliente) {
+    public BaseResponseDTO actualizarCliente(ClienteRequestDTO cliente, Long idCliente) {
         try {
             clienteRepository.findById(idCliente).orElseThrow(() -> new ClienteException(ClienteException.NO_EXISTE_CLIENTE));
             Cliente clienteNuevo = crearClienteModel(cliente);
@@ -72,7 +73,7 @@ public class ClienteServiceImpl implements ClienteService {
         }
     }
 
-    private Cliente crearClienteModel(ClienteDTO cliente
+    private Cliente crearClienteModel(ClienteRequestDTO cliente
     ) {
         Cliente nuevoCliente = new Cliente();
         nuevoCliente.setNombre(cliente.getNombre());

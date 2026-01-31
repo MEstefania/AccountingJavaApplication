@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class ClienteDTO {
+public class ClienteRequestDTO {
 
     @JsonProperty("id")
     private String id;
@@ -36,7 +36,6 @@ public class ClienteDTO {
 
     @NotNull(message = "La contraseña no puede ser nulo.")
     @JsonProperty("contrasenia")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String contrasenia;
 
     @NotNull(message = "El estado no puede ser nulo.")
